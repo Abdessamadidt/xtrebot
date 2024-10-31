@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 interface TransactionRequest {
   email: string;
@@ -21,7 +22,7 @@ export class TransactionsService {
 
   
 
-  private apiUrl = 'http://localhost:8080/api/transactions'; // Remplacez par l'URL de votre API
+  private apiUrl = environment.apiUrl+'transactions'; // Remplacez par l'URL de votre API
 
 
   constructor(private http: HttpClient) { }
