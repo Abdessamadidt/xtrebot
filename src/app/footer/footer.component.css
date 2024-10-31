@@ -128,6 +128,8 @@ button {
 
     button{
         width: 100px !important;
+        margin-left: -100px;
     }
     
+
 }

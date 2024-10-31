@@ -111,3 +111,29 @@ a {
     margin-top: 1%;
 }
 
+@media screen and (max-width:700px) {
+    .iconerighttcont ul{
+        display: none;
+    }
+    .iconerighttcont{
+        border: none;
+    }
+
+    .sidebarcont{
+        background-color: transparent;
+        height: 100%;
+    }
+
+    .iconleft{
+        position: fixed;
+        z-index: 10000;
+        top: 30px;
+        left: 240px;
+    }
+
+    .iconright{
+        margin-left: 160px;
+        z-index: 1000;
+    }
+
+}

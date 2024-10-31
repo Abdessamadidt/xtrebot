@@ -1,19 +1,23 @@
 app-side-bar{
     width: 17%;
+}
 
+.container-fluid2{
+    width: 100%;
+    margin-left: 0px;
 }
 
 .container-fluid2{
     margin-left: 100px;
     margin-top: 100px;
+    text-align: center;
 }
 
 @media screen and (max-width: 700px) {
     app-side-bar{
-        display: none;
     }
 
     .container-fluid2{
-        margin-left: 30px;
+        margin-left: 0px;
     }
 }

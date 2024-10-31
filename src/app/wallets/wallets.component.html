@@ -1,6 +1,6 @@
 <div class="row container bg-white mt-5 ">
     <div class="ele1 d-flex">
-        <div class="col mb-5">
+        <div class="col text-start mb-5">
             <div class="title">Total Balance</div>
             <div class="sold">{{user.btcSolde}} <span>BTC</span></div>
             <div class="pricedet">{{user.usdtSole}} USD</div>
@@ -35,8 +35,8 @@
                                                 style="width: 30px; height: 30px; margin-top: 5px;">
                                         </div>
                                         <div class="col">
-                                            <div class="row lit">{{ coins[selectedCoin]?.litname }}</div>
-                                            <div class="row tit">{{ coins[selectedCoin]?.name }}</div>
+                                            <div class="row lit">{{ coins[selectedCoin].litname }}</div>
+                                            <div class="row tit">{{ coins[selectedCoin].name }}</div>
                                         </div>
                                     </div>
                                 </button>
@@ -100,7 +100,7 @@
             <img src="../../assets/downleft.svg">
             Deposit</button>
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal2" #exampleModal2 tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="head">
@@ -174,7 +174,7 @@
                         </form>
                     </div>
 
-                    <button class="button btn btn" (click)="submitDeposit()" [disabled]="!isFormValid()"
+                    <button class="button btn btn-secondary" (click)="submitDeposit()" [disabled]="!isFormValid()"
                         style="background-color: rgba(128, 128, 128, 0.318); color: black;">
                         <img src="../../assets/downleft.svg"> Deposit
                     </button>

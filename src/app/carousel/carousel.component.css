@@ -1,0 +1,26 @@
+.blogitem{
+    width:300px;
+    height: 150px;
+    border-radius: 20px;
+}
+.cont{
+    margin-top: 100px;
+    width: 97%;
+    gap: 10px;
+
+}
+
+.carousel{
+    display: none;
+}
+
+@media screen and (max-width:700px) {
+        .carousel{
+            margin-top: 50px;
+            display: block;
+        }
+
+        .cont{
+            display: none !important;
+        }
+}

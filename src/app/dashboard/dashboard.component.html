@@ -34,12 +34,8 @@
     </div> -->
 
     <div class="coinscont mt-5">
-        <app-cardcoin *ngFor="let coin of coins"
-        [img]="coin.img"
-        [name]="coin.name"
-        [litnom]="coin.litnom"
-        [price]="coin.price"  
-        ></app-cardcoin>
+        <app-cardcoin *ngFor="let coin of coins" [img]="coin.img" [name]="coin.name" [litnom]="coin.litnom"
+            [price]="coin.price"></app-cardcoin>
     </div>
 
     <div class="row row3 mt-5 mb-2">
@@ -103,7 +99,7 @@
             <button type="button">Get App</button>
         </div>
     </div>
-    <div class="row5">
+    <!-- <div class="row5">
         <div class="col-6 img5">
             <img src="../../assets/row7.png" width="500">
         </div>
@@ -127,6 +123,6 @@
             <input type="email" placeholder="Enter your email address" />
             <button type="button" class="buttonba">Get Started</button>
         </div>
-    </div>
+    </div> -->
 
 </div>

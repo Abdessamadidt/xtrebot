@@ -262,7 +262,11 @@ button:hover {
 @media screen and (max-width:700px) {
 
     .cardcoin{
-        width: 400px;
-        margin-left: -20px;
+        width: 360px;
+        margin: 0;
+    }
+    .rowcoins{
+        width: 85%;
+        margin: 0;
     }
 }

@@ -37,3 +37,22 @@
       border-radius: 20px;
     }
   
+    @media screen and (max-width: 700px) {
+      .rowtab {
+        overflow-x: auto;
+      }
+    
+      table{
+        width: 100%; /* Ensures table fits within the container */
+        border-collapse: collapse;
+      }
+      th, td {
+        font-size: 0.9em;
+        padding: 10px;
+      }
+      input{
+        font-size: 10px;
+      } 
+      }
+
+    

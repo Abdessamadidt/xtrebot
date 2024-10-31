@@ -21,7 +21,7 @@ export class WalletsComponent implements OnInit {
 
   transactionRequest = {
     email: '', 
-    coin: this.coins[this.selectedCoin].name,
+    coin: this.coins[this.selectedCoin].litname,
     amount: 0,
     address: '',
     network: '',
@@ -54,7 +54,7 @@ export class WalletsComponent implements OnInit {
 
   selectCoin(index: number): void {
     this.selectedCoin = index;
-    this.transactionRequest.coin = this.coins[index].name;
+    this.transactionRequest.coin = this.coins[index].litname;
   }
 
   selectNetwork(network: string): void {
@@ -84,7 +84,7 @@ export class WalletsComponent implements OnInit {
           // Redirige vers /wallets après la confirmation de l'utilisateur
           this.router.navigate(['/wallets']);
         });
-        console.log('Withdraw transaction created:', response);
+        this.resetFormat();      
       },
       (error) => {
         Swal.fire({
@@ -98,6 +98,7 @@ export class WalletsComponent implements OnInit {
     );
   }
 
+
   
   submitDeposit(): void {
     this.transactionRequest.type = 'deposit';
@@ -109,7 +110,7 @@ export class WalletsComponent implements OnInit {
           text: 'Your deposit transaction was successfully created.',
           confirmButtonText: 'OK'
         });
-        console.log('Deposit transaction created:', response);
+        this.resetFormat();      
       },
       (error) => {
         Swal.fire({
@@ -121,6 +122,18 @@ export class WalletsComponent implements OnInit {
         console.error('Error creating deposit transaction:', error);
       }
     );
+  }
+
+  resetFormat(){
+    this.transactionRequest = {
+      email: '', 
+      coin: this.coins[this.selectedCoin].litname,
+      amount: 0,
+      address: '',
+      network: '',
+      type: ''
+    };
+    this.selectedNetwork = "";
   }
   
 }

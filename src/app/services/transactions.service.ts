@@ -42,6 +42,10 @@ export class TransactionsService {
     return this.http.get<any>(`${this.apiUrl}`+"/deposits");
   }
 
+  getTransactionsByEmail(email: any): Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}`+"/"+email);
+  }
+
   // Mettre à jour le prix d'un coin
 
 }

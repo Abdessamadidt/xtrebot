@@ -41,3 +41,32 @@
     border-top: 1px solid blue; /* Change the border to blue on hover */
     border-bottom: 1px solid blue; /* Change the border to blue on hover */
   }
+
+  @media screen and (max-width: 700px) {
+    table {
+      width: 90% !important;
+      display: block;
+    }
+  
+    .colphone {
+      display: none !important;
+    }
+
+    .container-fluid{
+      margin-left: 0px !important;
+    }
+
+    .rowtab {
+      overflow-x: auto;
+    }
+  
+    table{
+      width: 100%; /* Ensures table fits within the container */
+      border-collapse: collapse;
+    }
+    th, td {
+      font-size: 0.9em;
+      padding: 10px;
+    }
+  }
+  

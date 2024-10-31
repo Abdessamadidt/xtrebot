@@ -9,6 +9,7 @@ import { AuthService } from '../services/auth.service';
 export class SideBarComponent implements OnInit {
   isSidebarVisible = false;
   isAdmin: boolean = false;
+  isLoggedIn: boolean = false;
 
   constructor(private authService: AuthService){
     
@@ -17,9 +18,18 @@ export class SideBarComponent implements OnInit {
   ngOnInit(): void {
     this.isAdmin = this.authService.getUsername() === 'admin';
     console.log(this.isAdmin)
+    this.isLoggedIn = this.authService.isLoggedIn()
   }
 
   toggleSidebar(): void {
     this.isSidebarVisible = !this.isSidebarVisible;
 }
+
+logOut(){
+  this.isAdmin = false;
+  this.isLoggedIn = false;
+  this.authService.logout()
+}
+
+  
 }

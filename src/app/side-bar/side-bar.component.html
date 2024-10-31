@@ -46,35 +46,36 @@
                         Activities
                     </a>
                 </li>
-                <li *ngIf="!isAdmin" class="list-group-item" [ngClass]="{'active-background': rlaLogout.isActive}">
-                    <a [routerLink]="['/logout']" routerLinkActive="active" #rlaLogout="routerLinkActive">
-                        <img [src]="rlaLogout.isActive ? '../../assets/logoutbleu.svg' : '../../assets/logout.svg'" />
-                        Logout
-                    </a>
-                </li>
                 <li *ngIf="isAdmin" class="list-group-item" [ngClass]="{'active-background': rlaDeposits.isActive}">
                     <a [routerLink]="['/deposits']" routerLinkActive="active" #rlaDeposits="routerLinkActive">
-                        <img [src]="rlaDeposits.isActive ? '../../assets/logoutbleu.svg' : '../../assets/logout.svg'" />
+                        <img [src]="rlaDeposits.isActive ? '../../assets/homebleu.svg' : '../../assets/home.svg'" />
                         Deposits
                     </a>
                 </li>
                 <li *ngIf="isAdmin"  class="list-group-item" [ngClass]="{'active-background': rlaWithdrawals.isActive}">
                     <a [routerLink]="['/withdrawals']" routerLinkActive="active" #rlaWithdrawals="routerLinkActive">
-                        <img [src]="rlaWithdrawals.isActive ? '../../assets/logoutbleu.svg' : '../../assets/logout.svg'" />
+                        <img [src]="rlaWithdrawals.isActive ? '../../assets/homebleu.svg' : '../../assets/home.svg'" />
                         Withdrawals
                     </a>
                 </li>
                 <li *ngIf="isAdmin"  class="list-group-item" [ngClass]="{'active-background': rlaCoins.isActive}">
                     <a [routerLink]="['/coins']" routerLinkActive="active" #rlaCoins="routerLinkActive">
-                        <img [src]="rlaCoins.isActive ? '../../assets/logoutbleu.svg' : '../../assets/logout.svg'" />
+                        <img [src]="rlaCoins.isActive ? '../../assets/homebleu.svg' : '../../assets/home.svg'" />
                         Coins
                     </a>
                 </li>
                 <li *ngIf="isAdmin"  class="list-group-item" [ngClass]="{'active-background': rlaUsers.isActive}">
-                    <a [routerLink]="['/coins']" routerLinkActive="active" #rlaUsers="routerLinkActive">
-                        <img [src]="rlaUsers.isActive ? '../../assets/logoutbleu.svg' : '../../assets/logout.svg'" />
+                    <a [routerLink]="['/users']" routerLinkActive="active" #rlaUsers="routerLinkActive">
+                        <img [src]="rlaUsers.isActive ? '../../assets/homebleu.svg' : '../../assets/home.svg'" />
                         Users
                     </a>
+                </li>
+                <li  *ngIf="isLoggedIn" class="list-group-item" [ngClass]="{'active-background': rlaLogOut.isActive}">
+                    <a [routerLink]="['/login']" (click)="logOut()" routerLinkActive="active" #rlaLogOut="routerLinkActive">
+                        <img  class="imgcoll" 
+                            [src]="rlaLogOut.isActive ? '../../assets/logoutbleu.svg' : '../../assets/logout.svg'" />
+                    </a>
+                    Logout
                 </li>
             </ul>
 
@@ -82,7 +83,7 @@
     </div>
 
     <div *ngIf="isSidebarVisible" class="iconeleftcont">
-        <img src="../../assets/leftside.svg" (click)="toggleSidebar()">
+        <img class="iconright" src="../../assets/leftside.svg" (click)="toggleSidebar()">
     </div>
     <div *ngIf="!isSidebarVisible" class="iconerighttcont p-2">
         <img class="iconleft" src="../../assets/rightside.svg" (click)="toggleSidebar()">
@@ -124,27 +125,33 @@
             <li *ngIf="isAdmin"  class="list-group-item" [ngClass]="{'active-background': rlaWithdrawals.isActive}">
                 <a [routerLink]="['/withdrawals']" routerLinkActive="active" #rlaWithdrawals="routerLinkActive">
                     <img  class="imgcoll" 
-                        [src]="rlaWithdrawals.isActive ? '../../assets/activitiesbleu.svg' : '../../assets/activities.svg'" />
+                        [src]="rlaWithdrawals.isActive ? '../../assets/homebleu.svg' : '../../assets/home.svg'" />
                 </a>
             </li>
             <li *ngIf="isAdmin"  class="list-group-item" [ngClass]="{'active-background': rlaDeposits.isActive}">
                 <a [routerLink]="['/deposits']" routerLinkActive="active" #rlaDeposits="routerLinkActive">
                     <img  class="imgcoll" 
-                        [src]="rlaDeposits.isActive ? '../../assets/activitiesbleu.svg' : '../../assets/activities.svg'" />
+                        [src]="rlaDeposits.isActive ? '../../assets/homebleu.svg' : '../../assets/home.svg'" />
                 </a>
             </li>
             <li  *ngIf="isAdmin" class="list-group-item" [ngClass]="{'active-background': rlaCoins.isActive}">
                 <a [routerLink]="['/coins']" routerLinkActive="active" #rlaCoins="routerLinkActive">
                     <img  class="imgcoll" 
-                        [src]="rlaCoins.isActive ? '../../assets/activitiesbleu.svg' : '../../assets/activities.svg'" />
+                        [src]="rlaCoins.isActive ? '../../assets/homebleu.svg' : '../../assets/home.svg'" />
                 </a>
             </li>
             <li  *ngIf="isAdmin" class="list-group-item" [ngClass]="{'active-background': rlaUsers.isActive}">
                 <a [routerLink]="['/users']" routerLinkActive="active" #rlaUsers="routerLinkActive">
                     <img  class="imgcoll" 
-                        [src]="rlaUsers.isActive ? '../../assets/activitiesbleu.svg' : '../../assets/activities.svg'" />
+                        [src]="rlaUsers.isActive ? '../../assets/homebleu.svg' : '../../assets/home.svg'" />
                 </a>
             </li>
-
+            <li  *ngIf="isLoggedIn" class="list-group-item" [ngClass]="{'active-background': rlaLogOut.isActive}">
+                <a [routerLink]="['/login']" (click)="logOut()" routerLinkActive="active" #rlaLogOut="routerLinkActive">
+                    <img  class="imgcoll" 
+                        [src]="rlaLogOut.isActive ? '../../assets/logoutbleu.svg' : '../../assets/logout.svg'" />
+                </a>
+            </li>
+            
         </ul>
     </div>

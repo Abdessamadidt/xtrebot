@@ -1,0 +1,24 @@
+.iframe-container {
+    position: relative;
+    padding-top: 75%; /* Aspect ratio of 4:3 for height adjustment */
+    margin-top: 50px;
+    margin-left: 50px;
+    max-width: 100%;
+  }
+
+  .iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Adjust layout on smaller screens */
+  @media (max-width: 768px) {
+    .iframe-container {
+      padding-top: 56.25%; /* 16:9 aspect ratio for mobile */
+      margin-top: 20px;
+      margin-left: 0;
+    }
+  }

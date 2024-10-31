@@ -21,4 +21,11 @@ export class CoinsService {
     return this.http.put(`${this.apiUrl}/${coin.id}`, coin, { headers });
   }
   
+  addCoin(coinRequest: { name: string; litnom: string; price: number }): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}`, coinRequest);
+  }
+
+  deleteCoin(coinId: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/delete/${coinId}`);
+  }
 }

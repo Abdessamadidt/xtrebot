@@ -1,4 +1,4 @@
-<div class="page-main-header">
+<div class="page-main-header ">
     <div class="main-header-right">
         <div class="nav-right">
             <img src="../../assets/trebot2.png" class="logo">
@@ -36,7 +36,7 @@
             </ul>
             <button *ngIf="!isLoggedIn" class="button signup" type="button" [routerLink]="['/signup']">Sign Up</button>
             <!-- Affiche "Log Out" uniquement si l'utilisateur est connecté -->
-            <button *ngIf="isLoggedIn" class="button" type="button" (click)="onLogout()">Log Out</button>
+            <button *ngIf="isLoggedIn" class="button logout" type="button" (click)="onLogout()">Log Out</button>
             <div class="d-lg-none mobile-toggle pull-right"></div>
         </div>
     </div>

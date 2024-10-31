@@ -2,7 +2,6 @@
     background-color: #F7F9FD;
     margin-bottom: 120px;
     margin-left: 20px;
-
 }
 
 .title {
@@ -78,15 +77,13 @@ button:hover {
 
 .carousel{
 
-    width: 98%;
 }
 
 .coinscont {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between  ;
-    gap: 20px;
-    width: 95%;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .cardcoin {
@@ -213,7 +210,7 @@ button:hover {
     margin-bottom: 30px;
     margin-top: -20px;
     text-transform: uppercase;
-    width: 400px;
+    width: 300px;
 }
 
 .desc5 {
@@ -339,6 +336,7 @@ button:hover {
 
     .container-fluid {
         margin-bottom: 50px;
+        margin-left: 0px;
     }
 
     .title {
@@ -405,5 +403,14 @@ button:hover {
     }
     .img6{
         display: block;
+        width: 80%;
+    }
+
+    .coinscont{
+        margin-left: 0px;
+        width: 90%;
+    }
+    .row3{
+        margin-left: 0px;
     }
 }

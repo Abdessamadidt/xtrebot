@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <h1>Today's Cryptocurrency Prices</h1>
-    <div class="row mt-5">
+    <div class="row rowtab mt-5">
         <table class="">
             <thead class="bg-white">
                 <tr>
@@ -8,7 +8,7 @@
                     <th scope="col" class="th">PRICE</th>
                     <th scope="col" class="th">MARKET CAP</th>
                     <th scope="col" class="th">VOLUME</th>
-                    <th scope="col" class="th"></th>
+                    <th scope="col" class="th colphone"></th>
                 </tr>
             </thead>
             <tbody>
@@ -16,13 +16,13 @@
                     <td>
                         <div class="d-flex align-items-center">
                             <img [src]="lassets+coin.litnom+ext" class="img-fluid rounded me-2" width="40" height="40">
-                            <span>{{coin.name}}</span>
+                            <span class="th colphone">{{coin.name}}</span>
                         </div>
                     </td>
-                    <td style="color: #777E90">${{updatePrice(coin.price)}}</td>
+                    <td style="color: #777E90">${{ coin.price | number: '1.4-4' }}</td>
                     <td style="color:#777E90">{{coin.price * 42}}</td>
                     <td style="color:#777E90">{{coin.price * 22}}</td>
-                    <td><img src="../../assets/chartbitcoin-removebg-preview.png" width="120"></td>
+                    <td class="colphone"><img src="../../assets/chartbitcoin-removebg-preview.png" width="120"></td>
                 </tr>
             </tbody>
         </table>

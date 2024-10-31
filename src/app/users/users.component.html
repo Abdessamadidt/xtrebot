@@ -1,38 +1,40 @@
 <div class="container-fluid">
-    <h1>Users</h1>
-    <div class="row mt-5 bg-white border">
-      <table class="table">
-        <thead class="bg-dark">
-          <tr>
-            <th>Email</th>
-            <th>BTC</th>
-            <th>USDT</th>
-            <th class="thbut"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let user of users">
-            <td>
-              <p>{{ user.email }}</p>
-            </td>
-            <td>
-              <input type="number" class="form-control" [(ngModel)]="user.btcSolde" (input)="user.isPriceSubmitted = false" (keypress)="user.isPriceSubmitted = false">
-            </td>
-            <td>
-              <input type="number" class="form-control" [(ngModel)]="user.usdtSole" (input)="user.isPriceSubmitted = false" (keypress)="user.isPriceSubmitted = false">
-            </td>
-            <td class="d-flex justify-content-between">
-              <button *ngIf="!user.isPriceSubmitted" class="btn btn-primary" style="font-size: 10px" 
-        (click)="updateSolde(user)">
-  Submit
-</button>
-              <div *ngIf="user.isPriceSubmitted" class="btn btn-success d-flex justify-content-center align-items-center" style="height: 30px;">
-                <i class="bi bi-check-circle-fill" style="cursor: pointer;font-size: 7px;"></i> 
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <h1>Users</h1>
+  <div class="row mt-5 bg-white border">
+    <table class="table">
+      <thead class="bg-dark">
+        <tr>
+          <th>Email</th>
+          <th>BTC</th>
+          <th>USDT</th>
+          <th class="thbut"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>
+            <p>{{ user.email }}</p>
+          </td>
+          <td>
+            <input type="number" class="form-control" [(ngModel)]="user.btcSolde"
+              (input)="user.isPriceSubmitted = false" (input)="user.isPriceSubmitted = false">
+          </td>
+          <td>
+            <input type="number" class="form-control" [(ngModel)]="user.usdtSole"
+              (input)="user.isPriceSubmitted = false" (input)="user.isPriceSubmitted = false">
+          </td>
+          <td class="d-flex justify-content-between">
+            <button *ngIf="!user.isPriceSubmitted" class="btn btn-primary" style="font-size: 10px"
+              (click)="updateSolde(user)">
+              <i class="bi bi-arrow-repeat" style="cursor: pointer;"></i>
+            </button>
+            <div *ngIf="user.isPriceSubmitted" class="btn btn-success d-flex justify-content-center align-items-center"
+              style="height: 30px;">
+              <i class="bi bi-check-circle-fill" style="cursor: pointer;font-size: 7px;"></i>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  
+</div>

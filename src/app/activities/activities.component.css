@@ -1,0 +1,61 @@
+.container-fluid {
+    margin-left: 20px;
+  }
+  
+  
+  .row {
+    width: 100%;
+  
+  }
+  
+  .th {
+    font-size: 10px;
+    font-weight: 500;
+    color: gray;
+  }
+  
+  td {
+    padding: 30px;
+    font-weight: 500;
+    font-size: 13px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    text-align: left;
+    padding: 16px;
+    border: 1px rgba(255, 255, 255, 0.696) solid;
+    vertical-align: middle;
+  
+  }
+  
+  tr:nth-child(even) {
+    background-color: #ffffff;
+    border-radius: 20px;
+  }
+  
+  thead tr {
+    background-color: blue;
+    ;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .rowtab {
+      overflow-x: auto;
+    }
+  
+    table{
+      width: 100%; /* Ensures table fits within the container */
+      border-collapse: collapse;
+    }
+    th, td {
+      font-size: 0.9em;
+      padding: 10px;
+    }
+    }
