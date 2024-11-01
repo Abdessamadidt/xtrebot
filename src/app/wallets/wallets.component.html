@@ -31,7 +31,7 @@
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="row">
                                         <div class="col-2">
-                                            <img [src]="coins[selectedCoin]?.img" alt="Coin"
+                                            <img [src]="coins[selectedCoin].img" alt="Coin"
                                                 style="width: 30px; height: 30px; margin-top: 5px;">
                                         </div>
                                         <div class="col">
@@ -119,12 +119,12 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="row">
                                     <div class="col-2">
-                                        <img [src]="coins[selectedCoin]?.img" alt="Coin"
+                                        <img [src]="coins[selectedCoin].img" alt="Coin"
                                             style="width: 30px; height: 30px; margin-top: 5px;">
                                     </div>
                                     <div class="col">
-                                        <div class="row lit">{{ coins[selectedCoin]?.litname }}</div>
-                                        <div class="row tit">{{ coins[selectedCoin]?.name }}</div>
+                                        <div class="row lit">{{ coins[selectedCoin].litname }}</div>
+                                        <div class="row tit">{{ coins[selectedCoin].name }}</div>
                                     </div>
                                 </div>
                             </button>
