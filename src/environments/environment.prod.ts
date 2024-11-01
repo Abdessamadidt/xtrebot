@@ -1,6 +1,6 @@
 
 export const environment = {
-  production: false,
+  production: true,
   keycloakConfig: {
     url: 'http://localhost:8080/auth/',
     realm: 'trebot',
