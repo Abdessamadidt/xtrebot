@@ -4,6 +4,7 @@
     height: 100vh;
     background-color: #F7F9FD;
     overflow: hidden;
+    border: transparent;
 }
 
 .offcanvas {
@@ -97,7 +98,7 @@ a {
 }
 
 .iconerighttcont{
-    border-right: 1px  rgba(99, 93, 93, 0.14) solid ;
+    border-right: 1px  rgba(99, 93, 93, 0.059) solid ;
 } 
 
 .iconeleftcont img{

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
+import Swal from 'sweetalert2';
 
 interface LoginResponse {
   token: string;
@@ -37,6 +38,13 @@ export class AuthService {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
     localStorage.removeItem('email');
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Logout Successful",
+      showConfirmButton: false,
+      timer: 1500
+    });
   }
 
   private setToken(token: string): void {

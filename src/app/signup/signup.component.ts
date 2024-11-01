@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 
@@ -17,9 +18,8 @@ export class SignupComponent {
   seconds: number = 0;
 
   signupForm: FormGroup;
-  router: any;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.signupForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       firstName: ['', [Validators.required, Validators.pattern('^[A-Za-z]+$')]],
@@ -28,6 +28,7 @@ export class SignupComponent {
       confirmPassword: ['', Validators.required],
       agreeTerms: [false, Validators.requiredTrue]
     }, { validator: this.passwordMatchValidator });
+
   }
 
   // Custom validator for password matching
@@ -50,17 +51,35 @@ export class SignupComponent {
             confirmButtonText: 'OK'
           }).then(() => {
             // Redirect to dashboard after alert confirmation
-            this.router.navigate(['/dashboard']);
+          this.router.navigate(['/login']);
           });
         },
         (error) => {
-          console.log(this.signupForm.value)
-          console.error('Signup failed', error);
+          // Check for 409 error status
+          if (error.status === 409) {
+            const errorMessage = error.error?.error || 'Email or Username already exists.';
+            Swal.fire({
+              title: 'Sign Up Failed',
+              text: errorMessage, // Show specific error message
+              icon: 'error',
+              confirmButtonText: 'OK'
+            });
+          } else {
+            // Handle other error statuses
+            const errorMessage = error.error?.message || 'An unknown error occurred.';
+            Swal.fire({
+              title: 'Sign Up Failed',
+              text: errorMessage,
+              icon: 'error',
+              confirmButtonText: 'OK'
+            });
+          }
         }
       );
     }
   }
- 
+
+
   ngOnInit(): void {
     this.startCountdown();
   }

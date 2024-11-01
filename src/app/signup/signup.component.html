@@ -1,96 +1,99 @@
 <div class="row">
-    <div class="col-5 side ">
-        <div class="row row1 mt-5">
-            <div class="col-9 logo "><a routerLink="/"    >
-                    <img src="../../assets/Xtrebot1.png" width="100">
-                </a>
-            </div>
-            <div class="incones col-3 ">
-                <img src="../../assets/darkwhite.svg">
-                <img src="../../assets/langwhite.svg">
-            </div>
-        </div>
-        <div class="row row2">
-            <h5>We make it easy to<br>
-                buy and sell<br>
-                cryptocurrency</h5>
-            <h6>Crypto Asset Exchange</h6>
-        </div>
-        <div class="row3">
-            <img src="../../assets/bags.png">
-        </div>
-        <div class="row row4 mb-3">
-            <h5>Sign Up now and get down your trading Fees to Zero!</h5>
-            <h6>Event end time</h6>
-        </div>
-        <div class="row5">
-            <div class="time">
-                <span class="letter-top-right">D</span>
-                <span class="centered-word">{{days}}</span>
-            </div>
-            <div class="time">
-                <span class="letter-top-right">H</span>
-                <span class="centered-word">{{hours}}</span>
-            </div>
-            <div class="time">
-                <span class="letter-top-right">M</span>
-                <span class="centered-word">{{minutes}}</span>
-            </div>
-            <div class="time">
-                <span class="letter-top-right">S</span>
-                <span class="centered-word">{{seconds}}</span>
-            </div>
-        </div>
+  <div class="col-5 side ">
+    <div class="row row1 mt-5">
+      <div class="col-9 logo "><a routerLink="/">
+          <img src="../../assets/Xtrebot1.png" width="100">
+        </a>
+      </div>
+      <div class="incones col-3 ">
+        <img src="../../assets/darkwhite.svg">
+        <img src="../../assets/langwhite.svg">
+      </div>
     </div>
-    <div class="col formsignup">
-        <h1 class="title-form text-center mt-4 mb-3">Sign up to XTreBIT</h1>
-        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form-container mt-5">
-            <div class="form-group">
-              <label for="formGroupEmail" class="label mt-2">Email</label>
-              <input type="text" class="form-control" id="formGroupEmail" formControlName="email" placeholder="">
-              <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="text-danger">
-                Enter a valid email
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="formGroupFirstName" class="label mt-2">First Name</label>
-              <input type="text" class="form-control" id="formGroupFirstName" formControlName="firstName" placeholder="">
-              <div *ngIf="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched" class="text-danger">
-                Enter a valid first name
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="formGroupLastName" class="label mt-2">Last Name</label>
-              <input type="text" class="form-control" id="formGroupLastName" formControlName="lastName" placeholder="">
-              <div *ngIf="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched" class="text-danger">
-                Enter a valid last name
-              </div>
-            </div>
-            <div class="form-group mt-2">
-              <label for="formGroupPassword" class="label mt-2">Password</label>
-              <input type="password" class="form-control" id="formGroupPassword" formControlName="password" placeholder="">
-              <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="text-danger">
-                Password must be at least 6 characters
-              </div>
-            </div>
-            <div class="form-group mt-2">
-              <label for="formGroupPassword2" class="label mt-2">Confirm Password</label>
-              <input type="password" class="form-control" id="formGroupPassword2" formControlName="confirmPassword" placeholder="">
-              <div *ngIf="signupForm.hasError('mismatch') && signupForm.get('confirmPassword')?.touched" class="text-danger">
-                Passwords must match
-              </div>
-            </div>
-            <div class="row form-check mt-4">
-              <input class="col-1 form-check-input" type="checkbox" formControlName="agreeTerms" id="defaultCheck1">
-              <label class="col-11 form-check-label" for="defaultCheck1">
-                By signing up I agree that I am 18 years of age or older, to the
-                <span class="span">
-                  <a routerLink="/Privacy-policy">User Agreement, Privacy Policy, Cookie Policy</a>
-                </span>
-              </label>
-            </div>
-            <button class="button mt-4" type="submit" [disabled]="signupForm.invalid">Sign Up</button>
-          </form>          
+    <div class="row row2">
+      <h5>We make it easy to<br>
+        buy and sell<br>
+        cryptocurrency</h5>
+      <h6>Crypto Asset Exchange</h6>
+    </div>
+    <div class="row3">
+      <img src="../../assets/bags.png">
+    </div>
+    <div class="row row4 mb-3">
+      <h5>Sign Up now and get down your trading Fees to Zero!</h5>
+      <h6>Event end time</h6>
+    </div>
+    <div class="row5">
+      <div class="time">
+        <span class="letter-top-right">D</span>
+        <span class="centered-word">{{days}}</span>
+      </div>
+      <div class="time">
+        <span class="letter-top-right">H</span>
+        <span class="centered-word">{{hours}}</span>
+      </div>
+      <div class="time">
+        <span class="letter-top-right">M</span>
+        <span class="centered-word">{{minutes}}</span>
+      </div>
+      <div class="time">
+        <span class="letter-top-right">S</span>
+        <span class="centered-word">{{seconds}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="col formsignup">
+    <h1 class="title-form text-center mt-4 mb-3">Sign up to XTreBIT</h1>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form-container mt-5">
+      <div class="form-group">
+        <label for="formGroupEmail" class="label mt-2">Email</label>
+        <input type="text" class="form-control" id="formGroupEmail" formControlName="email" placeholder="">
+        <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="text-danger">
+          Enter a valid email
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="formGroupFirstName" class="label mt-2">First Name</label>
+        <input type="text" class="form-control" id="formGroupFirstName" formControlName="firstName" placeholder="">
+        <div *ngIf="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched" class="text-danger">
+          Enter a valid first name
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="formGroupLastName" class="label mt-2">Last Name</label>
+        <input type="text" class="form-control" id="formGroupLastName" formControlName="lastName" placeholder="">
+        <div *ngIf="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched" class="text-danger">
+          Enter a valid last name
+        </div>
+      </div>
+      <div class="form-group mt-2">
+        <label for="formGroupPassword" class="label mt-2">Password</label>
+        <input type="password" class="form-control" id="formGroupPassword" formControlName="password" placeholder="">
+        <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="text-danger">
+          Password must be at least 6 characters
+        </div>
+      </div>
+      <div class="form-group mt-2">
+        <label for="formGroupPassword2" class="label mt-2">Confirm Password</label>
+        <input type="password" class="form-control" id="formGroupPassword2" formControlName="confirmPassword"
+          placeholder="">
+        <div *ngIf="signupForm.hasError('mismatch') && signupForm.get('confirmPassword')?.touched" class="text-danger">
+          Passwords must match
+        </div>
+      </div>
+      <div class="row form-check mt-4">
+        <input class="col-1 form-check-input" type="checkbox" formControlName="agreeTerms" id="defaultCheck1">
+        <label class="col-11 form-check-label" for="defaultCheck1">
+          By signing up I agree that I am 18 years of age or older, to the
+          <span class="span">
+            <a routerLink="/Privacy-policy">User Agreement, Privacy Policy, Cookie Policy</a>
+          </span>
+        </label>
+      </div>
+      <button class="btn btn-primary button mt-4" type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+      <button class="btn btn-secondary button mt-4" [routerLink]="['/login']">Login</button>
+    </form>
 
-    </div>
+
+  </div>
 </div>

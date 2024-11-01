@@ -114,6 +114,10 @@ li{
     width: 800px;
 }
 
+.logout{
+    margin-right: 50px;
+}
+
 @media (max-width: 1300px) {
     .nav-right ul li {
         margin-right: 20px; /* Applique le margin-right de 20px */
