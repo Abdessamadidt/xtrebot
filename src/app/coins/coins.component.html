@@ -3,9 +3,12 @@
     <div class="col-10">
       <h1 class="">Coins</h1>
     </div>
-    <div class="col"><button class="button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-      <img src="../../assets/upright.svg">
-      Add coin</button></div>
+    <div class="col">
+      <button class="button add" type="button" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#exampleModal1">
+        <img src="../../assets/upright.svg">
+        Add coin</button>
+    </div>
   </div>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -38,6 +41,16 @@
               <input type="number" class="form-control" id="depositAmount" [(ngModel)]="coinRequest.price" name="price"
                 required>
             </div>
+            <div class="form-group mt-2">
+              <label for="addressCoin" class="label mt-2">Address</label>
+              <input type="text" class="form-control" id="depositAmount" [(ngModel)]="coinRequest.address" name="price"
+                required>
+            </div>
+            <div class="form-group mt-2">
+              <label for="networkCoin" class="label mt-2">Nework</label>
+              <input type="text" class="form-control" id="depositAmount" [(ngModel)]="coinRequest.network" name="price"
+                required>
+            </div>
           </form>
         </div>
 
@@ -49,37 +62,29 @@
   </div>
   <div class="row rowtab mt-5 bg-white border">
     <table class="table">
-      <thead>
-        <tr>
-          <th></th>
-          <th class="tdphone">Name</th>
-          <th class="tdphone"></th>
-          <th>Price</th>
-          <th class="thbut"></th>
-        </tr>
-      </thead>
       <tbody>
         <tr *ngFor="let coin of coins" class="align-middle">
           <td>
-            <img [src]="lassets + coin.litnom + ext" width="30">
-          </td>
-          <td class="tdphone">
-            <p>{{ coin.name }}</p>
-          </td>
-          <td class="tdphone">
-            <p>{{ coin.litnom }}</p>
+            <img [src]="lassets + coin.litnom + ext" width="50">
+            <p class="name">{{ coin.name }}</p>
+            <p class="litname">{{ coin.litnom }}</p>
           </td>
           <td>
-            <input type="number" class="form-control" [(ngModel)]="coin.price" (input)="coin.isPriceSubmitted = false">
+            <p class="price">Price</p>
+            <input type="number" class="form-control network" [(ngModel)]="coin.price" (input)="coin.isPriceSubmitted = false">
+            <p class="price">Address</p>
+            <input type="text" class="form-control network" [(ngModel)]="coin.address" (input)="coin.isPriceSubmitted = false">
+            <p class="price">Network</p>
+            <input type="text" class="form-control network" [(ngModel)]="coin.network" (input)="coin.isPriceSubmitted = false">
           </td>
-          <td class="d-flex justify-content-between">
+          <td class="d-flex justify-content-between actions">
             <button *ngIf="!coin.isPriceSubmitted" class="btn btn-primary btntab" (click)="submitCoinUpdate(coin)">
               <i class="bi bi-arrow-repeat" style="cursor: pointer;"></i>
             </button>
-            <div *ngIf="coin.isPriceSubmitted" class="btn btn-success d-flex justify-content-between">
+            <button *ngIf="coin.isPriceSubmitted" class="btn btn-success btntab" (click)="submitCoinUpdate(coin)">
               <i class="bi bi-check-circle-fill" style="cursor: pointer;"></i>
-            </div>
-            <button *ngIf="!coin.isPriceSubmitted" class="btn danger btntab" (click)="deleteCoin(coin)">
+            </button>
+            <button class="btn danger btntab" (click)="deleteCoin(coin)">
               -
             </button>
           </td>
@@ -87,4 +92,3 @@
       </tbody>
     </table>
   </div>
-  

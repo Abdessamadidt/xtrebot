@@ -42,6 +42,7 @@
 
 .btn-success{
     cursor: none;
+    background-color: #4FBF67;
 }
 .thbut{
     width: 200px;
@@ -383,6 +384,28 @@ align-items: center;
   color: blue;
 }
 
+.actions{
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.price{
+  color: blue;
+  font-weight: bold;
+}
+
+.name{
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+.litname{
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
 
 /* Responsive Styles */
 @media screen and (max-width: 700px) {
@@ -431,7 +454,7 @@ align-items: center;
   }
 
   button {
-      width: 100%; /* Full width for buttons */
+      width: 50%; /* Full width for buttons */
       height: 40px; /* Slightly smaller height */
       font-size: 0.9rem; /* Slightly smaller font size */
       margin: 5px 0; /* Space between buttons */
@@ -459,10 +482,16 @@ align-items: center;
   table{
     width: 100%; /* Ensures table fits within the container */
     border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   th, td {
     font-size: 0.9em;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   button p, .btn-success p{
     display: none;
@@ -472,8 +501,14 @@ align-items: center;
     font-size: 10px;
   }
 
-  .tdphone{
+  .tdphone, .tpc{
     display: none;
   }
+  
+  .imgtabph{
+    width: 70px;
+    margin-bottom: 10px;
+  }
+
 }
 /* Base styles */

@@ -246,7 +246,7 @@ span {
 @media screen and (max-width:570px) {
 
     .side {
-        height: 70vh;
+        height: 80vh;
         width: 700px ;
     }
 

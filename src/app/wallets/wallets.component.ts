@@ -2,32 +2,34 @@ import { Component, OnInit } from '@angular/core';
 import { TransactionsService } from '../services/transactions.service';
 import Swal from 'sweetalert2';
 import { AuthService } from '../services/auth.service';
-import { Router } from '@angular/router';
 import { CoinsService } from '../services/coins-service.service';
 
 @Component({
   selector: 'app-wallets',
   templateUrl: './wallets.component.html',
-  styleUrls: ['./wallets.component.css'] // Corrected to plural form
+  styleUrls: ['./wallets.component.css']
 })
 export class WalletsComponent implements OnInit {
-  tcoins: any[] = [];
-  coins: { name: string, litnom: string, img: string }[] = [];
-  selectedCoin: number = 0;
+
+  coins: any[] = []
+
+ 
+  selectedCoin = 0;
   user: any;
   ext = '.svg'
-  lassets
+  lassets = '../../assets/coins/'
+
 
   transactionRequest = {
     email: '',
-    coin: '',
+    coin: this.coins.length ? this.coins[this.selectedCoin].litnom : '',
     amount: 0,
     address: '',
     network: '',
     type: ''
   };
 
-  selectedNetwork: string = '';
+  selectedNetwork = '';
 
   constructor(
     private transactionService: TransactionsService,
@@ -36,38 +38,31 @@ export class WalletsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.loadCoins();
-    const email = this.authService.getEmail();
-    this.transactionRequest.email = email;
-    
+    this.loadCoins()
+    this.transactionRequest.email = this.authService.getEmail();
+    const email = this.authService.getEmail(); // Replace this with the actual email
     this.authService.getUserByEmail(email).subscribe(
       (data) => {
         this.user = data;
-      },
-      (error) => {
-        console.error('Error fetching user data:', error);
       }
     );
   }
 
   loadCoins(): void {
     this.coinsService.getCoins().subscribe(
-      (data) => {
-        this.tcoins = data.sort((a: any, b: any) => a.name.localeCompare(b.name));
-        this.coins = this.tcoins.map((coin: any) => ({
-          name: coin.name,
-          litnom: coin.litnom,
-          img: coin.img
-        }));
-        console.log('Loaded coins:', this.tcoins);
+      data => {
+        this.coins = data.sort((a: any, b: any) => a.name.localeCompare(b.name));
+        console.log(this.coins)
       },
-      (error) => console.error('Error loading coins:', error)
+      error => console.error('Erreur lors de la récupération des coins', error)
     );
+    console.log(this.coins)
   }
 
   selectCoin(index: number): void {
     this.selectedCoin = index;
-    this.transactionRequest.coin = this.coins[index]?.litnom || '';
+    this.transactionRequest.coin = this.coins[index].litnom;
+    this.transactionRequest.address = this.coins[index].adress
   }
 
   selectNetwork(network: string): void {
@@ -85,48 +80,66 @@ export class WalletsComponent implements OnInit {
 
   submitWithdraw(): void {
     this.transactionRequest.type = 'withdraw';
-    this.handleTransaction('Withdraw Successful', 'Withdraw Failed');
-  }
-
-  submitDeposit(): void {
-    this.transactionRequest.type = 'deposit';
-    this.handleTransaction('Deposit Successful', 'Deposit Failed');
-  }
-
-  private handleTransaction(successTitle: string, errorTitle: string): void {
     this.transactionService.createTransaction(this.transactionRequest).subscribe(
       (response) => {
         Swal.fire({
           icon: 'success',
-          title: successTitle,
-          text: `Your ${this.transactionRequest.type} transaction was successfully created.`,
+          title: 'Withdraw Successful',
+          text: 'Your withdraw transaction was successfully created.',
           confirmButtonText: 'OK'
         }).then(() => {
-          // Optionally redirect or perform additional actions
+          // Redirige vers /wallets après la confirmation de l'utilisateur
         });
         this.resetFormat();
       },
       (error) => {
         Swal.fire({
           icon: 'error',
-          title: errorTitle,
-          text: `There was an error creating your ${this.transactionRequest.type} transaction. Please try again.`,
+          title: 'Withdraw Failed',
+          text: 'There was an error creating your withdraw transaction. Please try again.',
           confirmButtonText: 'Retry'
         });
-        console.error(`Error creating ${this.transactionRequest.type} transaction:`, error);
+        console.error('Error creating withdraw transaction:', error);
       }
     );
   }
 
-  resetFormat(): void {
+
+
+  submitDeposit(): void {
+    this.transactionRequest.type = 'deposit';
+    this.transactionService.createTransaction(this.transactionRequest).subscribe(
+      (response) => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Deposit Successful',
+          text: 'Your deposit transaction was successfully created.',
+          confirmButtonText: 'OK'
+        });
+        this.resetFormat();
+      },
+      (error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Deposit Failed',
+          text: 'There was an error creating your deposit transaction. Please try again.',
+          confirmButtonText: 'Retry'
+        });
+        console.error('Error creating deposit transaction:', error);
+      }
+    );
+  }
+
+  resetFormat() {
     this.transactionRequest = {
-      ...this.transactionRequest, // Retains the existing email
-      coin: this.coins[this.selectedCoin]?.litnom || '',
+      email: '',
+      coin: this.coins[this.selectedCoin].litnom,
       amount: 0,
       address: '',
       network: '',
       type: ''
     };
-    this.selectedNetwork = '';
+    this.selectedNetwork = "";
   }
+
 }

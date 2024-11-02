@@ -19,7 +19,9 @@ export class CoinsComponent implements OnInit {
   coinRequest = {
     name: '',
     litnom: '',
-    price: 0
+    price: 0,
+    address:'',
+    network:''
   };
 
   ngOnInit(): void {
@@ -54,7 +56,8 @@ export class CoinsComponent implements OnInit {
     return Boolean(
       this.coinRequest.name &&
       this.coinRequest.litnom &&
-      this.coinRequest.price > 0
+      this.coinRequest.price > 0 &&
+      this.coinRequest.address
     );
   }
 
@@ -108,7 +111,9 @@ export class CoinsComponent implements OnInit {
     this.coinRequest = {
       name: '',
       litnom: '',
-      price: 0
+      price: 0,
+      address: '',
+      network:''
     };
   }
 

@@ -7,7 +7,7 @@ import { AuthService } from '../services/auth.service';
   styleUrl: './side-bar.component.css'
 })
 export class SideBarComponent implements OnInit {
-  isSidebarVisible = false;
+  isSidebarVisible = true;
   isAdmin: boolean = false;
   isLoggedIn: boolean = false;
 
@@ -17,7 +17,6 @@ export class SideBarComponent implements OnInit {
   
   ngOnInit(): void {
     this.isAdmin = this.authService.getUsername() === 'admin';
-    console.log(this.isAdmin)
     this.isLoggedIn = this.authService.isLoggedIn()
   }
 

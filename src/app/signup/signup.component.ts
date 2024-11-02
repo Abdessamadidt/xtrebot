@@ -16,6 +16,7 @@ export class SignupComponent {
   hours: number = 0;
   minutes: number = 0;
   seconds: number = 0;
+  isVerified = false;
 
   signupForm: FormGroup;
 
@@ -108,5 +109,9 @@ export class SignupComponent {
         this.seconds = 0;
       }
     }, 1000); // Update every second
+  }
+
+  verify(){
+    this.isVerified = true
   }
 }

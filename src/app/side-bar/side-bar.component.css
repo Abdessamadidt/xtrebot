@@ -16,9 +16,6 @@
     flex-grow: 1;
   }
   
-  .show-sidebar .content {
-
-  }
   
   .offcanvas.show {
     position: static;
