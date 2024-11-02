@@ -1,26 +1,32 @@
-<div class="container-fluid">
+<div class="container-fluid text-start mt-3">
   <h1>Deposits</h1>
-  <div class="row rowtab mt-5">
-    <table class="table">
-      <thead class="bg-white">
-        <tr>
-          <th>Email</th>
-          <th>Date</th>
-          <th colspan="2">Coin</th>
-          <th>Amount</th>
-          <th>Address</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let transaction of transactions">
-          <td>{{ transaction.email }}</td>
-          <td>{{ transaction.date | date: 'dd/MM/yyyy, HH:mm:ss' }}</td>
-          <td>{{ transaction.coin.toUpperCase() }}</td>
-          <td><img [src]="lassets+transaction.coin.toUpperCase()+ext" width="30" style="margin-top: -5px;"></td>
-          <td>{{ transaction.amount }}</td>
-          <td>{{ transaction.address }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="table-responsive"> <!-- Ajout de la classe table-responsive -->
+    <div class="row rowtab mt-5">
+      <table class="table">
+        <thead class="bg-white">
+          <tr>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Coin</th>
+            <th class="coltele"></th>
+            <th>Amount</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of transactions">
+            <td>{{ transaction.email }}</td>
+            <td>{{ transaction.date | date: 'dd/MM/yyyy, HH:mm:ss' }}</td>
+            <td class="coltele">{{ transaction.coin.toUpperCase() }}</td>
+            <td><img [src]="lassets+transaction.coin.toUpperCase()+ext" width="30"></td>
+            <td>{{ transaction.amount }}</td>
+            <td>
+              <div class="row">{{ transaction.address }}</div>
+              <div class="row">{{ transaction.network }}</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

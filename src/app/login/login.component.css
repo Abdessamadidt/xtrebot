@@ -1,10 +1,10 @@
 .side {
     background-color: #3772ff;
-    height: 150vh;
+    height: 110%;
     /* Change to 100vh to avoid overflow */
     flex: 1 1 40%;
     /* Allow it to take 40% of the width */
-    min-width: 300px;
+    min-width: 700px;
     /* Minimum width to maintain usability */
 }
 
@@ -40,6 +40,10 @@ h6 {
 .row4 {
     margin-left: 50px;
     width: 80%;
+}
+
+.row2{
+    margin-top: -70px;
 }
 
 .row3 {
@@ -91,7 +95,9 @@ h6 {
 }
 
 .title-form {
+    font-weight: 700;
     margin-bottom: 20px;
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .formsignup {
@@ -100,13 +106,13 @@ h6 {
     align-items: center;
     flex: 1 1 50%;
     /* Allow it to take 50% of the width */
-    min-width: 300px;
+    min-width: 700px;
     /* Minimum width to maintain usability */
 }
 
 .form-container {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .form-control {
@@ -147,95 +153,101 @@ span {
     padding: 0 16px;
 }
 
-
-@media screen and (max-width:1000px) {
-    .side {
-        height: 150vh
-    }
-
-}
-
-.row1 {
-    margin-left: 5%;
-    margin-top: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.logo {
-    width: 40%;
-}
-
-h6 {
-    margin-top: 10px;
-}
-
-
-.incones {
-    display: inline-block;
-    flex-wrap: nowrap;
-    width: 30.4%;
-}
-
-.row2 {
-    margin-left: 5%;
-
-}
-
-
-.row2 h5 {
-    font-size: 3.5rem;
-}
-
-.row3 {
-}
-
-.row4 {
-    margin-left: 5%;
-    width: 99%;
-}
-
-.row4 h5 {
-    font-size: 2.5rem;
-}
-
-
 .row5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 40px;
 }
 
 .time {
-    width: 70px;
-    /* Adjust width for smaller screens */
-    height: 70px;
-    /* Adjust height for smaller screens */
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
 }
 
 .centered-word {
-    font-size: 2rem;
-    /* Adjust font size for centered words */
-}
-
-.form-group {
-    width: 90%;
-    margin-left: 5%;
-}
-
-.button {
-    width: 90%;
-    margin-left: 5%;
+    font-family: "DM Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    font-size: 3rem;
+    color: black;
 
 }
 
-.title-form {
-    margin-bottom: -40px;
+.letter-top-right {
+    position: absolute;
+    font-size: 16px;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 5px;
+    color: gray;
+    font-weight: 150;
 }
+
+.forgot{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;    
+}
+
+.clv{
+    background-color: transparent;
+    color: black;
+    box-shadow: none;
+    border: 1.5px rgba(158, 153, 153, 0.403) solid;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap:30%
+}
+
+.clvv{
+    background-color: transparent;
+    color: black;
+    box-shadow: none;
+    border: 1.5px rgb(27, 219, 1) solid;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap:20%;
+    color: #4FBF67;
+}
+
+.cercleb{
+    width: 30px;
+    height: 30px;
+    border: 1.5px #3772FF solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cerclel{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #3772FF;
+}
+
+.titlephone, .parphone{
+    display: none;
+}
+
 
 @media screen and (max-width:570px) {
 
     .side {
-        height: 40vh;
+        height: 70vh;
+        width: 700px ;
     }
 
     .row1 {
@@ -245,8 +257,17 @@ h6 {
         justify-content: space-between;
     }
 
+
     .logo {
-        width: 40%;
+        width: 70%;
+        margin-top: -50px;
+    }
+
+    .incones{
+        margin-top: -50px;
+    }
+    .logo img{
+        width: 150px;
     }
 
     h6 {
@@ -279,13 +300,13 @@ h6 {
 
 
     .row5 {
-        gap: 10px;
+        gap: 30px;
     }
 
     .time {
-        width: 70px;
+        width: 120px;
         /* Adjust width for smaller screens */
-        height: 70px;
+        height: 120px;
         /* Adjust height for smaller screens */
 
     }
@@ -309,5 +330,34 @@ h6 {
     .title-form {
         margin-bottom: -40px;
     }
+    .titlephone{
+        color:white;
+        font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-size: 3rem;
+        font-weight: 700;
+        display: block;
+    }
 
+    .parphone{
+        color: white;
+        margin-top: 20px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        display: block;
+    }
+
+    .formsignup{
+        min-width: 700px;
+    }
+
+    .form-container {
+        width: 100%;
+        max-width: 100%;
+
+    }
+
+    .label{
+        font-size: 20px;
+    }
+    
 }

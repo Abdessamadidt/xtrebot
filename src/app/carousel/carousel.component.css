@@ -17,10 +17,16 @@
 @media screen and (max-width:700px) {
         .carousel{
             margin-top: 50px;
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            margin-left: 30px;
         }
 
         .cont{
             display: none !important;
         }
+
+        
 }

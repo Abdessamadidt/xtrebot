@@ -1,7 +1,11 @@
 .footercontainer{
-    width: 98%;
+    width: 95%;
     margin-left: 5px;
-    margin-top: 100px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
 }
 
 .col{
@@ -13,6 +17,8 @@
 }
 
 .collinks{
+    text-align: start;
+    width: 18%;
     font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -25,7 +31,8 @@
 }
 
 .collinks ul{
-    margin-top: -5px;
+    margin-top: 0px;
+    margin-left: 5px;
 }
 
 .collinks ul li{
@@ -41,14 +48,16 @@
 .newsletter{
     margin-top: 20px;
     background-color: #E0E9FD;
-    width: 35%;
     border-radius: 20px;
     text-align: center;
     height: 250px;
     padding: 40px;
-
+    width: 30%;
 }
 
+.legal{
+    margin-top: -175px;
+}
 
 
 .newssubmit{
@@ -123,12 +132,38 @@ button {
     }
 
     .newsletter{
-        margin-right: 25px;
+        width: 90%;
+        height:300px;
     }
 
     button{
         width: 100px !important;
         margin-left: -100px;
+    }
+    .footercontainer{
+        display: flex;
+        justify-content: center;
+    }
+    .collinks{
+        width: 40%;
+    }
+    .collinks1{
+        text-align: end;
+    }
+    .collinks2{
+        text-align: start;
+        margin-top: 70px;
+    }
+
+    .legal{
+      margin-top: 5px;
+      text-align: end;
+      width: 40%;
+      margin-right: 100px;
+    }
+
+    .legal ul{
+        text-align: end;
     }
     
 

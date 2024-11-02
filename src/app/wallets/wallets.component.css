@@ -126,6 +126,7 @@ span {
 
 .dropdown{
     width: 100%;
+    margin-left: -5px;
 
 }
 
@@ -262,7 +263,7 @@ label {
 }
 
 .lastrow{
-    padding: 10px;
+    padding: 20px;
 }
 
 .avaicl{
@@ -315,6 +316,31 @@ align-items: center;
     color: blue;
   }
 
+.dropdown-arrow {
+   
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em; /* Espacement à gauche */
+    vertical-align: middle;
+    content: ""; /* Supprimer le contenu par défaut */
+    border: solid transparent; /* Créer une flèche avec des bordures */
+    border-width: 0.25em 0.25em 0 0.25em; /* Ajuster la taille de la flèche */
+    border-color: #666a6f transparent transparent transparent; /* Couleur de la flèche */
+    margin-left: 300px;
+    margin-top: -50px;
+}
+
+.totb1{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.totb2{
+    color: #777E90;
+    font-weight: 600;
+}
 
 /* Responsive Styles */
 @media screen and (max-width: 700px) {

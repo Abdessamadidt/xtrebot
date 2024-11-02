@@ -1,7 +1,6 @@
 
 .container-fluid{
-    margin-left: 20px;
-    width: 98%;
+    width: 1200px;
   }
   
 
@@ -60,40 +59,14 @@ p{
 }
 
 .btntab{
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 10px;
 }
 
-@media screen and (max-width: 700px) {
-  .rowtab {
-    overflow-x: auto;
-  }
-
-  table{
-    width: 100%; /* Ensures table fits within the container */
-    border-collapse: collapse;
-  }
-  th, td {
-    font-size: 0.9em;
-    padding: 10px;
-  }
-  button p, .btn-success p{
-    display: none;
-  }
-  .thbut{
-    width: 20px;
-    font-size: 10px;
-  }
-
-  .tdphone{
-    display: none;
-  }
-  }
-
-/* Base styles */
 *{
   font-family: "DM Sans", sans-serif;
 }
@@ -475,4 +448,32 @@ align-items: center;
   .pricedet2 {
       font-size: 0.9rem; /* Slightly smaller price detail */
   }
+
+  .container-fluid{
+    width: 120%;
+  }
+  .rowtab {
+    overflow-x: auto;
+  }
+
+  table{
+    width: 100%; /* Ensures table fits within the container */
+    border-collapse: collapse;
+  }
+  th, td {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+  button p, .btn-success p{
+    display: none;
+  }
+  .thbut{
+    width: 20px;
+    font-size: 10px;
+  }
+
+  .tdphone{
+    display: none;
+  }
 }
+/* Base styles */

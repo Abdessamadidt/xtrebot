@@ -11,6 +11,11 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
+  days: number = 0;
+  hours: number = 0;
+  minutes: number = 0;
+  seconds: number = 0;
+  isVerified = false
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -19,6 +24,9 @@ export class LoginComponent implements OnInit {
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['/dashboard']);
     }
+    this.isVerified = false
+    this.startCountdown();
+
   }
   onLogin(): void {
     if (!this.email || !this.password) {
@@ -51,5 +59,34 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+
+  getLastDayOfMonth(): Date {
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth() + 1, 0); // last day of current month
+  }
+
+  startCountdown() {
+    const lastDayOfMonth = this.getLastDayOfMonth();
+
+    setInterval(() => {
+      const now = new Date();
+      const timeDiff = lastDayOfMonth.getTime() - now.getTime();
+
+      this.days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      this.hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      this.minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+      this.seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+      if (timeDiff <= 0) {
+        this.days = 0;
+        this.hours = 0;
+        this.minutes = 0;
+        this.seconds = 0;
+      }
+    }, 1000); // Update every second
+  }
   
+  verify(){
+    this.isVerified = true
+  }
 }

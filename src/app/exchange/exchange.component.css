@@ -3,7 +3,7 @@
     padding-top: 75%; /* Aspect ratio of 4:3 for height adjustment */
     margin-top: 50px;
     margin-left: 50px;
-    max-width: 100%;
+    max-width: 90%;
   }
 
   .iframe {

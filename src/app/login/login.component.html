@@ -1,8 +1,9 @@
-<div class="row">
-    <div class="col-5 side ">
-        <div class="row row1 mt-5">
-            <div class="col-9 logo "><a routerLink="/"    >
-                    <img src="../../assets/Xtrebot1.png" width="100">
+<div class="row container-fluid">
+    <div class="col-5 side">
+        <div class="row row1 mt-2">
+            <div class="col-9 logo ">
+                <a routerLink="/">
+                    <img src="../../assets/Xtrebot1.png" width="150">
                 </a>
             </div>
             <div class="incones col-3 ">
@@ -10,6 +11,10 @@
                 <img src="../../assets/langwhite.svg">
             </div>
         </div>
+        <div class="titlephone">
+            Sign Up now and get down your trading Fees to Zero!
+        </div>
+        <p class="parphone">Event and time</p>
         <div class="row row2">
             <h5>We make it easy to<br>
                 buy and sell<br>
@@ -19,25 +24,64 @@
         <div class="row3">
             <img src="../../assets/bags.png">
         </div>
+        <div class="countercont mt-5 mb-5">
+            <div class="row5">
+                <div class="time">
+                    <span class="letter-top-right">D</span>
+                    <span class="centered-word">{{days}}</span>
+                </div>
+                <div class="time">
+                    <span class="letter-top-right">H</span>
+                    <span class="centered-word">{{hours}}</span>
+                </div>
+                <div class="time">
+                    <span class="letter-top-right">M</span>
+                    <span class="centered-word">{{minutes}}</span>
+                </div>
+                <div class="time">
+                    <span class="letter-top-right">S</span>
+                    <span class="centered-word">{{seconds}}</span>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col formsignup">
-        <h1 class="title-form text-center mt-4 mb-3">Login in to XTreBIT</h1>
+        <h1 class="title-form text-center mt-5 mb-3">Sign In to Xtreboot</h1>
         <form class="form-container mt-5" (ngSubmit)="onLogin()">
             <div class="form-group">
-              <label for="formGroupEmail" class="label mt-2">Email</label>
-              <input type="text" class="form-control" id="formGroupEmail" [(ngModel)]="email" name="email" placeholder="">
+                <label for="formGroupEmail" class="label mt-2">Email</label>
+                <input type="text" class="form-control" id="formGroupEmail" [(ngModel)]="email" name="email"
+                    placeholder="">
             </div>
             <div class="form-group mt-2">
-              <label for="formGroupPassword" class="label mt-2">Password</label>
-              <input type="password" class="form-control" id="formGroupPassword" [(ngModel)]="password" name="password" placeholder="">
+                <label for="formGroupPassword" class="label mt-2">Password</label>
+                <input type="password" class="form-control" id="formGroupPassword" [(ngModel)]="password"
+                    name="password" placeholder="">
             </div>
-            <button class="button mt-4" type="submit">Login</button>
-            <button class="button mt-4" [routerLink]="['/signup']">Sign Up</button>
+            <div class="text-end forgot">
+                <a href="">Forgot Password?</a>
+            </div>
+            <div *ngIf="!isVerified" class="button clv  mt-5 mb-3" (click)="verify()">
+                <div class="cercleb">
+                    <div class="cerclel"></div>
+                </div>
+                <div>
+                    Click to verify
+                    <img src="../../assets/verify.svg">
+                </div>
+            </div>
+            <div *ngIf="isVerified" class="button clvv  mt-5 mb-3" (click)="verify()">
+                <img src="../../assets/verified.svg">
+                <div>
+                    Verification Succeeded
+                    <img src="../../assets/verifiedface.svg">
+                </div>
+            </div>
+            <button class="button mt-3" type="submit">Sign In</button>
+        </form>
 
-          </form>
 
-          
-          
+
 
     </div>
 </div>

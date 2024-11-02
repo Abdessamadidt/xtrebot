@@ -66,7 +66,6 @@ export class WalletsComponent implements OnInit {
     return Boolean(
       this.transactionRequest.coin &&
       this.transactionRequest.amount > 0 &&
-      this.transactionRequest.address &&
       this.transactionRequest.network
     );
   }

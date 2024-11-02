@@ -45,7 +45,8 @@
             ],
             "scripts": [
               "node_modules/tiny-slider/dist/min/tiny-slider.js",
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/jquery/dist/jquery.min.js"
             ]
           },
           "configurations": {
@@ -108,10 +109,15 @@
               }
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/azure-blue.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/tiny-slider/dist/tiny-slider.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/tiny-slider/dist/min/tiny-slider.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           }
         }
       }
