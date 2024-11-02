@@ -27,15 +27,14 @@
                         </div>
                         <div class="modal-body text-start">
                             <div class="dropdown">
-                                <button class="btn dropdown-toggle border" type="button" id="dropdownMenuButton"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="btn dropdown-toggle border" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div class="row">
                                         <div class="col-2">
                                             <img [src]="coins[selectedCoin].img" alt="Coin"
                                                 style="width: 30px; height: 30px; margin-top: 5px;">
                                         </div>
                                         <div class="col">
-                                            <div class="row lit">{{ coins[selectedCoin].litname }}</div>
+                                            <div class="row lit">{{ coins[selectedCoin].litnom }}</div>
                                             <div class="row tit">{{ coins[selectedCoin].name }}</div>
                                         </div>
                                     </div>
@@ -48,7 +47,7 @@
                                                     style="width: 30px; height: 30px; margin-top: 5px;">
                                             </div>
                                             <div class="col">
-                                                <div class="row lit">{{ coin.litname }}</div>
+                                                <div class="row lit">{{ coin.litnom }}</div>
                                                 <div class="row tit">{{ coin.name }}</div>
                                             </div>
                                         </div>
@@ -115,15 +114,14 @@
                     </div>
                     <div class="modal-body text-start">
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle border" type="button" id="dropdownMenuButton"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn dropdown-toggle border" type="button"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="row">
                                     <div class="col-2">
                                         <img [src]="coins[selectedCoin].img" alt="Coin"
                                             style="width: 30px; height: 30px; margin-top: 5px;">
                                     </div>
                                     <div class="col">
-                                        <div class="row lit">{{ coins[selectedCoin].litname }}</div>
+                                        <div class="row lit">{{ coins[selectedCoin].litnom }}</div>
                                         <div class="row tit">{{ coins[selectedCoin].name }}</div>
                                     </div>
                                 </div>
@@ -136,7 +134,7 @@
                                                 style="width: 30px; height: 30px; margin-top: 5px;">
                                         </div>
                                         <div class="col">
-                                            <div class="row lit">{{ coin.litname }}</div>
+                                            <div class="row lit">{{ coin.litnom }}</div>
                                             <div class="row tit">{{ coin.name }}</div>
                                         </div>
                                     </div>
@@ -160,11 +158,19 @@
                             </div>
                         </div>
 
+                        <div *ngIf="selectedCoin === 0 || selectedCoin === 1" class="row mt-4 choose rounded border">
+                            <div class="col-9"><h4>Total Balance</h4></div>
+                            <div class="col">
+                                <div class="row totb1">{{user.btcSolde}}</div>
+                                <div class="row totb2">{{user.usdtSolde}} USD</div>
+                            </div>
+                        </div>
+
                         <form class="form-container mt-2" (ngSubmit)="submitDeposit()">
                             <div class="form-group">
                                 <label for="depositAddress" class="label mt-2">Address</label>
                                 <input type="text" class="form-control" id="depositAddress"
-                                    [(ngModel)]="transactionRequest.address" name="address" required>
+                                    [(ngModel)]="transactionRequest.address" name="address" disabled>
                             </div>
                             <div class="form-group mt-2">
                                 <label for="depositAmount" class="label mt-2">Amount to Deposit</label>
