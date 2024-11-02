@@ -1,8 +1,8 @@
-<div class="page-main-header ">
+<div class="page-main-header">
     <div class="main-header-right">
         <div class="nav-right">
             <img src="../../assets/trebot2.png" class="logo">
-            <ul class="nav">
+            <ul class="nav" [ngClass]="{'sideBarshown' : isSideBarVisible}">
                 <li><a class="text-reset text-decoration-none" [routerLink]="['exchange']">Trade</a></li>
                 <li><a class="text-reset text-decoration-none" [routerLink]="['prices']">Markets</a></li>
                 <li><a class="text-reset text-decoration-none" [routerLink]="['buy-crypto']">Buy Crypto</a></li>

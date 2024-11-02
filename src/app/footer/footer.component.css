@@ -88,7 +88,7 @@ p {
 input[type="email"] {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 12px 16px;
     border: none;
     width: 230px;
@@ -113,9 +113,10 @@ button {
     transition: background-color 0.3s ease;
     border-left: 1px solid #ddd; /* To separate input and button */
     border-radius: 18px;
-    margin : 5px;
+    margin-left: -30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     height: 45;
-    margin-right: -5px;
     
 }
 

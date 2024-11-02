@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { SidebarService } from '../services/sidebar.service';
 
 
 @Component({
@@ -10,13 +11,19 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
+  isSideBarVisible: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private sidebarService: SidebarService,private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
-    // Vérifie si l'utilisateur est connecté au chargement du composant
-    this.isLoggedIn = this.authService.isLoggedIn();
+    this.sidebarService.isSideBarOpen$.subscribe(isOpen => {
+      this.isSideBarVisible = isOpen;
+      this.isLoggedIn = this.authService.isLoggedIn();
+
+    });
   }
+
+
 
   onLogout(): void {
     this.authService.logout(); // Déconnecte l'utilisateur

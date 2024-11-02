@@ -1,6 +1,6 @@
 <div class="container-fluid d-flex">
   <div class=""><app-side-bar></app-side-bar></div>
-  <div class="container-fluid container-fluid2">
+  <div class="container-fluid container-fluid2" [ngClass]="{'sideBarshown' : isSideBarVisible}">
     <app-header></app-header>
     <div class="outlet">
       <router-outlet></router-outlet>
