@@ -1,7 +1,8 @@
 
 .container-fluid{
-  width: 800px;
+  width: 1200px;
   overflow-x: auto;
+  text-align: start;
 }
 
 .rowtab{
