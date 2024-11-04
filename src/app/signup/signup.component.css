@@ -2,11 +2,8 @@
     background-color: #3772ff;
     height: 110%;
     /* Change to 100vh to avoid overflow */
-    flex: 1 1 40%;
     /* Allow it to take 40% of the width */
-    min-width: 700px;
     /* Minimum width to maintain usability */
-    
 }
 
 .row1 {
@@ -14,7 +11,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 80px;
-    width: 80%;
+    width: 100%;
 }
 
 .incones{
@@ -371,3 +368,4 @@ span {
     }
     
 }
+

@@ -2,9 +2,7 @@
     background-color: #3772ff;
     height: 110%;
     /* Change to 100vh to avoid overflow */
-    flex: 1 1 40%;
     /* Allow it to take 40% of the width */
-    min-width: 700px;
     /* Minimum width to maintain usability */
 }
 
@@ -13,7 +11,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 80px;
-    width: 80%;
+    width: 100%;
 }
 
 .incones{
@@ -112,7 +110,7 @@ h6 {
 
 .form-container {
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
 }
 
 .form-control {
@@ -243,11 +241,12 @@ span {
 }
 
 
-@media screen and (max-width:570px) {
+@media screen and (max-width:1230px) {
 
     .side {
-        height: 80vh;
-        width: 700px ;
+        height: auto;
+        width: 100% ;
+        border: 1px red solid;
     }
 
     .row1 {

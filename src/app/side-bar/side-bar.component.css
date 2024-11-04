@@ -1,10 +1,10 @@
 .sidebarcont{
-    position: fixed;
     z-index: 1000;
     height: 100vh;
     background-color: #F7F9FD;
     overflow: hidden;
     border-right: 1px rgba(184, 182, 182, 0) solid;
+    position: fixed; 
 }
 
 .offcanvas {
@@ -69,13 +69,6 @@ a {
     color: #777E90;
 }
 
-.iconeleftcont{
-    position: absolute;
-    left: 15%;
-    top: 5%;    
-    z-index: 2200;
-
-}
 
 .iconleft{
     position: absolute;
@@ -96,18 +89,20 @@ a {
 }
 
 .iconerighttcont{
-    border-right: 1px  rgba(99, 93, 93, 0.059) solid ;
 } 
-
-.iconeleftcont img{
-    left: 15%;
-    position: fixed;
-
-}
 
 .iconleft{
     margin-left: 30%;
     margin-top: 1%;
+}
+
+.iconeleftcont {
+    position: absolute;
+    top: 30px; /* Distance du haut */
+    right: 0px; /* Distance de la droite */
+    width: 30px; /* Taille de l'icône, ajustez selon vos besoins */
+    height: auto; /* Maintenir le ratio de l'image */
+    z-index: 10000;
 }
 
 @media screen and (max-width:700px) {
