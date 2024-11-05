@@ -349,6 +349,8 @@ align-items: center;
 
 .address{
     width: 90%;
+    word-break: break-all; /* Force le texte à aller à la ligne */
+    overflow-wrap: break-word;
 }
 
 .copybtn1{
