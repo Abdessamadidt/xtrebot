@@ -27,7 +27,8 @@
                         </div>
                         <div class="modal-body text-start">
                             <div class="dropdown">
-                                <button class="btn dropdown-toggle border" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn dropdown-toggle border" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div class="row">
                                         <div class="col-2">
                                             <img [src]="lassets+coins[selectedCoin].litnom+ext" alt="Coin"
@@ -76,7 +77,7 @@
                             </form>
                         </div>
 
-                        <button class="button btn btn-primary" (click)="submitWithdraw()" [disabled]="!isFormValid()">
+                        <button class="button btn btn-primary" (click)="submitWithdraw()" [disabled]="!isFormValidForWithraw()">
                             <img src="../../assets/upright.svg"> Withdraw
                         </button>
                     </div>
@@ -89,7 +90,8 @@
             <img src="../../assets/downleft.svg">
             Deposit</button>
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal2" #exampleModal2 tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal2" #exampleModal2 tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="head">
@@ -104,7 +106,8 @@
                     </div>
                     <div class="modal-body text-start">
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle border" type="button"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn dropdown-toggle border" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <div class="row">
                                     <div class="col-2">
                                         <img [src]="lassets+coins[selectedCoin].litnom+ext" alt="Coin"
@@ -132,44 +135,49 @@
                             </ul>
                         </div>
 
-                        <div *ngIf="coins[selectedCoin].network"
-                                class="row mt-4 choose rounded border">
-                                <h4>Choose Network</h4>
-                                <div class="networkcont">
-                                    <div class="network border" (click)="selectNetwork('BTC')"
-                                        [ngClass]="{'selected-network': selectedNetwork === 'BTC'}">{{coins[selectedCoin].network}}</div>
-                                </div>
+                        <div *ngIf="coins[selectedCoin].network" class="row mt-4 choose rounded border">
+                            <h4>Choose Network</h4>
+                            <div class="networkcont">
+                                <div class="network border" (click)="selectNetwork(coins[selectedCoin].network)"
+                                    [ngClass]="{'selected-network': selectedNetwork != ''}">
+                                    {{coins[selectedCoin].network}}</div>
                             </div>
+                        </div>
 
                         <div *ngIf="selectedCoin === 0 || selectedCoin === 1" class="row mt-4 choose rounded border">
-                            <div class="col-9"><h4>Total Balance</h4></div>
+                            <div class="col-9">
+                                <h4>Total Balance</h4>
+                            </div>
                             <div class="col">
                                 <div class="row totb1">{{user.btcSolde}}</div>
                                 <div class="row totb2">{{user.usdtSolde}} USD</div>
                             </div>
                         </div>
 
-                        <form class="form-container mt-2" (ngSubmit)="submitDeposit()">
-                            <div class="form-group">
-                                <label for="depositAddress" class="label mt-2">Address</label>
-                                <input type="text" class="form-control" id="depositAddress"
-                                    [(ngModel)]="transactionRequest.address" name="address" disabled>
+                        <div class="row mt-4 choose addresscont rounded border bg-white">
+                            <h4>Address</h4>
+                            <div class="addresstext">
+                                Send only BTC to this address. Sending any other asset to this address may result in the
+                                loss of your deposit!
                             </div>
-                            <div class="form-group mt-2">
-                                <label for="depositAmount" class="label mt-2">Amount to Deposit</label>
-                                <input type="number" class="form-control" id="depositAmount"
-                                    [(ngModel)]="transactionRequest.amount" name="amount" required>
+                            <div class="row address rounded border mt-4">
+                                    <div class="col-10 textbnt1">0x23228db1b75ba8bcb175a...</div>
+                                    <div class="col-2 copybtn1 bg-white" (click)="copyAddress()" >
+                                        <img src="../../assets/copy.svg">
+                                    </div>
+                                </div>
+                                <div class="qrcont text-center mt-4">
+                                    <img src="../../assets/QRAdress-removebg-preview.png">
+                                </div>
                             </div>
-                        </form>
-                    </div>
-
-                    <button class="button btn btn-secondary" (click)="submitDeposit()" [disabled]="!isFormValid()"
+                        </div>
+                        <button class="button btn btn-secondary" (click)="submitDeposit()"
+                        [disabled]="!isFormValidForDeposit()"
                         style="background-color: rgba(128, 128, 128, 0.318); color: black;">
                         <img src="../../assets/downleft.svg"> Deposit
-                    </button>   
+                    </button>
+                    </div>
                 </div>
+
             </div>
         </div>
-
-    </div>
-</div>

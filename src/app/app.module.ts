@@ -33,6 +33,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { FormsModule } from '@angular/forms';
 import { UsersComponent } from './users/users.component';
+import { ClipboardModule } from 'ngx-clipboard';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { UsersComponent } from './users/users.component';
     SignupComponent, LayoutComponent, LoginComponent, CarouselComponent, SideBarComponent,
      BlogComponent, WithdrawalsComponent, DepositsComponent, CoinsComponent,UsersComponent],
   imports: [BrowserModule, AppRoutingModule, RouterModule, CommonModule, NgApexchartsModule, HttpClientModule, RouterModule,
-    FormsModule, ReactiveFormsModule,FormsModule
+    FormsModule, ReactiveFormsModule,FormsModule,ClipboardModule
 
   ],
   providers: [

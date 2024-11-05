@@ -386,7 +386,7 @@ align-items: center;
 
 .actions{
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 .price{

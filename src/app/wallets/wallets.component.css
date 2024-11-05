@@ -340,6 +340,39 @@ align-items: center;
     font-weight: 600;
 }
 
+.addresscont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.address{
+    width: 90%;
+}
+
+.copybtn1{
+    cursor: pointer;
+    z-index: 1000;
+    width: 20px;
+}
+.textbnt1{
+    z-index: 999;
+    color: black;
+}
+
+.qrcont{
+    width: 90%;
+}
+.qrcont img{
+    width: 60%;
+}
+
+.addresstext{
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.9rem;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 700px) {
     .container {

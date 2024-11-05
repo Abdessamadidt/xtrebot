@@ -4,13 +4,15 @@ import Swal from 'sweetalert2';
 import { AuthService } from '../services/auth.service';
 import { CoinsService } from '../services/coins-service.service';
 
+
 @Component({
   selector: 'app-wallets',
   templateUrl: './wallets.component.html',
   styleUrls: ['./wallets.component.css']
 })
 export class WalletsComponent implements OnInit {
-
+  isCopied = false
+  adressStatic: string = '0x23228db1b75ba8bcb175a079e2d582ede04c28ee';
   coins: any[] = []
 
  
@@ -24,7 +26,7 @@ export class WalletsComponent implements OnInit {
     email: '',
     coin: this.coins.length ? this.coins[this.selectedCoin].litnom : '',
     amount: 0,
-    address: '',
+    address: this.adressStatic,
     network: '',
     type: ''
   };
@@ -52,11 +54,10 @@ export class WalletsComponent implements OnInit {
     this.coinsService.getCoins().subscribe(
       data => {
         this.coins = data.sort((a: any, b: any) => a.name.localeCompare(b.name));
-        console.log(this.coins)
+        this.selectCoin(0);
       },
-      error => console.error('Erreur lors de la récupération des coins', error)
     );
-    console.log(this.coins)
+
   }
 
   selectCoin(index: number): void {
@@ -70,11 +71,16 @@ export class WalletsComponent implements OnInit {
     this.transactionRequest.network = network;
   }
 
-  isFormValid(): boolean {
+  isFormValidForWithraw(): boolean {
     return Boolean(
       this.transactionRequest.coin &&
-      this.transactionRequest.amount > 0 &&
-      this.transactionRequest.network
+      this.transactionRequest.network &&
+      this.transactionRequest.amount > 0
+    );
+  }
+  isFormValidForDeposit(): boolean {
+    return Boolean(
+      this.transactionRequest.coin
     );
   }
 
@@ -99,7 +105,6 @@ export class WalletsComponent implements OnInit {
           text: 'There was an error creating your withdraw transaction. Please try again.',
           confirmButtonText: 'Retry'
         });
-        console.error('Error creating withdraw transaction:', error);
       }
     );
   }
@@ -108,6 +113,7 @@ export class WalletsComponent implements OnInit {
 
   submitDeposit(): void {
     this.transactionRequest.type = 'deposit';
+    this.transactionRequest.address = this.adressStatic
     this.transactionService.createTransaction(this.transactionRequest).subscribe(
       (response) => {
         Swal.fire({
@@ -125,7 +131,6 @@ export class WalletsComponent implements OnInit {
           text: 'There was an error creating your deposit transaction. Please try again.',
           confirmButtonText: 'Retry'
         });
-        console.error('Error creating deposit transaction:', error);
       }
     );
   }
@@ -140,6 +145,11 @@ export class WalletsComponent implements OnInit {
       type: ''
     };
     this.selectedNetwork = "";
+  }
+
+  copyAddress() {
+    navigator.clipboard.writeText(this.adressStatic);
+    this.isCopied = !this.isCopied
   }
 
 }

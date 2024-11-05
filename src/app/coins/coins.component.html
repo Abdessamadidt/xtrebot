@@ -72,10 +72,10 @@
           <td>
             <p class="price">Price</p>
             <input type="number" class="form-control network" [(ngModel)]="coin.price" (input)="coin.isPriceSubmitted = false">
-            <p class="price">Address</p>
+            <!-- <p class="price">Address</p>
             <input type="text" class="form-control network" [(ngModel)]="coin.address" (input)="coin.isPriceSubmitted = false">
             <p class="price">Network</p>
-            <input type="text" class="form-control network" [(ngModel)]="coin.network" (input)="coin.isPriceSubmitted = false">
+            <input type="text" class="form-control network" [(ngModel)]="coin.network" (input)="coin.isPriceSubmitted = false"> -->
           </td>
           <td class="d-flex justify-content-between actions">
             <button *ngIf="!coin.isPriceSubmitted" class="btn btn-primary btntab" (click)="submitCoinUpdate(coin)">
