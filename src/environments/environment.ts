@@ -6,5 +6,5 @@ export const environment = {
     realm: 'trebot',
     clientId: 'crypto-app'
   },
-  apiUrl: 'http://109.176.198.42:8080/api/',
+  apiUrl: 'https://xtreboot.com/api/',
 }
